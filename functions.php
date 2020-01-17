@@ -107,8 +107,9 @@ add_theme_support( 'html5', array(
 -------------------------------------------------------------- */
 
 register_nav_menus( array(
-    'header_menu' => __( 'Menu Header - Principal', 'opslens' ),
-    'footer_menu' => __( 'Menu Footer - Principal', 'opslens' ),
+    'header_menu' => __( 'Menu Header - Main', 'opslens' ),
+    'topheader_menu' => __( 'Menu Header - Top', 'opslens' ),
+    'footer_menu' => __( 'Menu Footer - Main', 'opslens' ),
 ) );
 
 /* --------------------------------------------------------------
@@ -127,15 +128,15 @@ function opslens_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 
-    //    register_sidebar( array(
-    //        'name' => __( 'Shop Sidebar', 'opslens' ),
-    //        'id' => 'shop_sidebar',
-    //        'description' => __( 'Estos widgets seran vistos en Tienda y Categorias de Producto', 'opslens' ),
-    //        'before_widget' => '<li id='%1$s' class='widget %2$s'>',
-    //        'after_widget'  => '</li>',
-    //        'before_title'  => '<h2 class='widgettitle'>',
-    //        'after_title'   => '</h2>',
-    //    ) );
+    register_sidebars( 3, array(
+        'name'          => __('Footer Section %d', 'opslens'),
+        'id'            => 'sidebar_footer',
+        'description'   => __('Footer Section', 'opslens'),
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</li>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>'
+    ) );
 }
 
 /* --------------------------------------------------------------
@@ -173,6 +174,12 @@ require_once('includes/wp_custom_metabox.php');
 require_once('includes/wp_custom_post_type.php');
 
 /* --------------------------------------------------------------
+    ADD CUSTOM POST TYPE
+-------------------------------------------------------------- */
+
+require_once('includes/wp_bakery_functions.php');
+
+/* --------------------------------------------------------------
     ADD CUSTOM THEME CONTROLS
 -------------------------------------------------------------- */
 
@@ -189,4 +196,6 @@ if ( function_exists('add_image_size') ) {
     add_image_size('avatar', 100, 100, true);
     add_image_size('blog_img', 276, 217, true);
     add_image_size('single_img', 636, 297, true );
+    /* WPBAKERY CUSTOM SIZES */
+    add_image_size('custom_slider_bar', 65, 50, array('center', 'center'));
 }

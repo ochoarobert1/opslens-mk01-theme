@@ -1,0 +1,73 @@
+/* --------------------------------------------------------------
+/* MAIN LESS MIXINS AND FUNCTIONS - LESSHAT
+-------------------------------------------------------------- */
+@import 'less/_lesshat.less';
+/* --------------------------------------------------------------
+Variables
+-------------------------------------------------------------- */
+
+/* Colors */
+@black: #000000;
+@white: #ffffff;
+@gray3: #333333;
+@gray6: #666666;
+@gray9: #999999;
+@grayc: #cccccc;
+@grayf0: #f0f0f0;
+@red: #F71A13;
+@blacken: #1C1C1C;
+@grayen: #616161;
+@copy: #868686;
+
+/* Font Family */
+@noto: 'Noto Sans', sans-serif;
+
+/* --------------------------------------------------------------
+CUSTOM OVERRIDES
+-------------------------------------------------------------- */
+.vc_column-inner {
+    padding: 0 !important;
+}
+
+
+/* --------------------------------------------------------------
+SHORTCODE: BAR SLIDER
+-------------------------------------------------------------- */
+.custom-slider-bar-container {
+    & .custom-slider-bar-title {
+        & h2 {
+            background: @red;
+            color: @white;
+            margin: 0;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 0.9rem 0.5rem;
+            font-weight: 600;
+        }
+    }
+
+    & .custom-slider-bar-content {
+        max-height: 50px;
+
+        & .custom-slider-bar-item {
+            & .custom-slider-bar-item-wrapper {
+                .display(flex);
+                align-items: center;
+                justify-content: flex-start;
+
+                & img {
+                    height: 50px !important;
+                    width: auto !important;
+                    max-width: 65px !important;
+                    margin-right: 10px;
+                }
+
+                & h3 {
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

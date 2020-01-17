@@ -8,32 +8,317 @@ Variables
 
 /* Colors */
 @black: #000000;
+@white: #ffffff;
 @gray3: #333333;
 @gray6: #666666;
 @gray9: #999999;
 @grayc: #cccccc;
 @grayf0: #f0f0f0;
-@white: #ffffff;
-@blue: #2B7BCB;
-@orange: #FFB12A;
+@red: #F71A13;
+@blacken: #1C1C1C;
+@grayen: #616161;
+@copy: #868686;
+
+/* Font Family */
+@noto: 'Noto Sans', sans-serif;
+
 
 /* --------------------------------------------------------------
 Body default
 -------------------------------------------------------------- */
-html, body { height: 100%; }
+html,
+body {
+    height: 100%;
+}
 
 body {
     font-weight: 400;
-    font-family: 'Open Sans', sans-serif;
+    font-family: @noto;
 }
 
 a {
     .transition(all .2s ease-in-out);
 
-    &:hover { text-decoration: none; }
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 
 .page-container {
     min-height: 85vh;
+}
+
+.container {
+    max-width: 1380px;
+}
+
+.search-container {
+    overflow: hidden;
+    text-align: right;
+    max-height: 40px;
+}
+
+.search-box {
+    margin: 0 auto;
+    margin-right: 0;
+    transition: width 0.6s, border-radius 0.6s, background 0.6s, box-shadow;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid #a9a9a9;
+    cursor: pointer;
+    background: #f5f5f5;
+    font-size: 0.8rem;
+}
+
+.search-box + label {
+    position: absolute;
+    top: 2px;
+}
+
+.search-box + label .search-icon {
+    color: black;
+}
+
+.search-box:hover {
+    color: white;
+    background: #c8c8c8;
+
+}
+
+.search-box:hover + label .search-icon {
+    color: white;
+}
+
+.search-box:focus {
+    transition: width 0.6s ease-in-out, border-radius 0.6s, background;
+    border: 1px solid #a9a9a9;
+    outline: none;
+    box-shadow: none;
+    padding-left: 15px;
+    cursor: text;
+
+    width: 93%;
+    background: transparent;
+    color: black;
+
+}
+
+.search-box:focus + label {
+    position: absolute;
+    top: 2px;
+}
+
+.search-box:focus + label .search-icon {
+    color: black;
+}
+
+.search-box:not(:focus) {
+    text-indent: -5000px;
+}
+
+#search-submit {
+    position: relative;
+    //    left: -5000px;
+}
+
+.search-icon {
+    position: relative;
+    left: -22px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* --------------------------------------------------------------
+1.- HEADER
+-------------------------------------------------------------- */
+.top-header {
+    padding: .3rem 1rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: -0.5px;
+
+    & a {
+        color: @black;
+
+        &:hover {
+            color: @red;
+        }
+    }
+
+    & .top-header-left {
+        font-size: 1.1rem;
+
+        & a {
+            padding-right: 10px;
+        }
+    }
+
+    & .top-header-center {
+        & .custom-navbar-nav {
+            .display(flex);
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    & .top-header-right {
+        & div {
+            display: block;
+            margin: 0 auto;
+            margin-right: 0;
+        }
+    }
+}
+
+.the-header {
+    background: url(../images/banner_header.jpg);
+
+    & .header-center {
+        text-align: center;
+
+        & .img-logo {
+            max-width: 250px;
+            display: block;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+    }
+}
+
+.the-navbar {
+    & .navbar-menu {
+        & .main-navbar-nav {
+            .display(flex);
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            & li {
+                & .nav-link {
+                    color: @black;
+                    padding: 0 .5rem;
+                    padding-top: .5rem;
+                    padding-bottom: .2rem;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                    border-bottom: 8px solid transparent;
+
+                    &:hover {
+                        border-color: @red;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+& .navbar-line {
+    border-top: 1px solid @red;
+}
+
+/* --------------------------------------------------------------
+2.- FOOTER
+-------------------------------------------------------------- */
+.the-footer {
+    padding: 3rem 0;
+    background: @blacken;
+    color: @white;
+
+    & .footer-fixed {
+        border-right: 1px solid white;
+        padding: 4rem;
+    }
+
+    & .footer-item {
+        & ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        & a {
+            color: @white;
+
+            &:hover {
+                color: red;
+            }
+        }
+    }
+
+    & .footer-copy {
+        padding: 3rem 0;
+        padding-bottom: 1rem;
+        text-align: center;
+
+        & h5 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: @copy;
+        }
+
+        & h6 {
+            font-size: .9rem;
+            color: @grayen;
+
+            & a {
+                color: @copy;
+
+                &:hover {
+                    color: @red;
+                }
+            }
+        }
+
+        & .footer-navbar-nav {
+            .display(flex);
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding-bottom: 1rem;
+
+            & li {
+                & a {
+                    position: relative;
+                    font-size: .9rem;
+                    letter-spacing: .05rem;
+                    text-transform: uppercase;
+                    color: @grayen;
+
+                    &:hover {
+                        color: @copy;
+                    }
+
+                    &:after {
+                        content: ' ';
+                        position: absolute;
+                        top: 45%;
+                        right: -2px;
+                        height: 5px;
+                        width: 5px;
+                        background: @grayen;
+                        border-radius: 100%;
+                    }
+                }
+
+                &:last-child {
+                    & a {
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

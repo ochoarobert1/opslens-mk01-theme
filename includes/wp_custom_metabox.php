@@ -1,4 +1,5 @@
 <?php
+/*
 add_action( 'cmb2_admin_init', 'opslens_register_custom_metabox' );
 function opslens_register_custom_metabox() {
     $prefix = 'opslens_';
@@ -30,3 +31,4 @@ function opslens_register_custom_metabox() {
         // 'column'          => true, // Display field value in the admin post-listing columns
     ) );
 }
+*/
