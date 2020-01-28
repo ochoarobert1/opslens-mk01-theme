@@ -46,3 +46,4 @@ add_action('wp_enqueue_scripts', 'vc_pahoy_frontend_scripts_caller', 99);
 /* CUSTOM WPBAKERY FUNCTIONS
 -------------------------------------------------------------- */
 require_once('vc-elements/custom-slider-bar-map.php');
+require_once('vc-elements/custom-slider-vertical-map.php');

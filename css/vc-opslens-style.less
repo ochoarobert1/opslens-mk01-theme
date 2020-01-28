@@ -1,3 +1,4 @@
+// compress: false, strictMath: true, javascriptEnabled: true
 /* --------------------------------------------------------------
 /* MAIN LESS MIXINS AND FUNCTIONS - LESSHAT
 -------------------------------------------------------------- */
@@ -63,11 +64,102 @@ SHORTCODE: BAR SLIDER
                 }
 
                 & h3 {
-                    font-size: 0.8rem;
+                    font-size: 0.6rem;
                     font-weight: 400;
                     margin: 0;
                 }
             }
         }
     }
+}
+
+/* --------------------------------------------------------------
+SHORTCODE: VERTICAL SLIDER
+-------------------------------------------------------------- */
+.custom-slider-vertical-container {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    max-height: 700px;
+
+    & .custom-slider-vertical-title {
+        border-bottom: 1px solid @red;
+        padding: 0;
+
+        & h2 {
+            background: @red;
+            color: @white;
+            margin: 0;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.2rem 0.8rem;
+        }
+    }
+
+    & .custom-slider-vertical-content {
+        padding: .3rem 0;
+        margin: .5rem 0;
+        background: #3C3A3B;
+
+        & .custom-slider-vertical-slider {
+            & .custom-slider-vertical-item {
+                padding: .5rem 1rem;
+                .display(flex);
+                align-items: center;
+                justify-content: flex-start;
+
+                & a {
+                    color: @white;
+                }
+
+                & a.custom-slider-vertical-image {
+                    flex: 0 0 40%;
+                    margin-right: 15px;
+                }
+
+                & .custom-slider-vertical-text {
+                    flex: 0 0 59%;
+                    padding: 0;
+                    padding-right: 0.5rem;
+
+                    & .custom-slider-vertical-item-category {
+                        & a {
+                            display: inline-block;
+                            background: @red;
+                            font-size: 0.7rem;
+                            margin: 0;
+                            padding: 0.2rem .5rem;
+                            margin-right: 3px;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+
+                    & h3 {
+                        font-size: 0.8rem;
+                        line-height: 1.5rem;
+                    }
+
+                    & .custom-slider-vertical-author {
+                        color: @white;
+                        font-size: 0.7rem;
+                    }
+
+                    & .custom-slider-vertical-date {
+                        color: @white;
+                        font-size: 0.7rem;
+                        font-weight: 600;
+                    }
+                }
+
+
+
+
+
+
+            }
+        }
+    }
+
 }

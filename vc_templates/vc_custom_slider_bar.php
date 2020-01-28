@@ -17,7 +17,7 @@ ob_start();
             <div class="custom-slider-bar-title col-2">
                 <h2><?php echo $section_title; ?></h2>
             </div>
-            <div class="custom-slider-bar-content col-10">
+            <div class="custom-slider-bar-content col-9">
                 <?php $array_posts = new WP_Query($args); ?>
                 <?php if ($array_posts->have_posts()) : ?>
                 <div class="custom-slider-bar-owlcarousel owl-carousel owl-theme">
@@ -40,9 +40,14 @@ ob_start();
                 <?php endif; ?>
                 <?php wp_reset_query(); ?>
             </div>
+            <div class="custom-slider-bar-controls col-1">
+                <a href="" class="custom-slider-bar-left"><i class="fa fa-chevron-left"></i></a>
+                <a href="" class="custom-slider-bar-right"><i class="fa fa-chevron-right"></i></a>
+            </div>
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
 
 </script>
@@ -51,3 +56,5 @@ ob_start();
 $content = ob_get_clean();
 /* RETURN SHORTCODE */
 return $content;
+
+ 

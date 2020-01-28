@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     die( 'Silence is Golden' );
 }
 
-function custom_slider_bar_map() {
+function custom_slider_vertical_map() {
     /* CALL ALL CATEGORIES */
     $categories_array = array();
     $categories = get_categories(array('taxonomy' => 'category', 'hide_empty' => false));
@@ -14,10 +14,10 @@ function custom_slider_bar_map() {
 
     /* PREPARE SETTINGS FOR VC_MAP */
     $settings = array(
-        'name'                    => __( 'Custom Slider Bar', 'opslens' ),
-        'base'                    => 'vc_custom_slider_bar',
+        'name'                    => __( 'Custom Slider Vertical', 'opslens' ),
+        'base'                    => 'vc_custom_slider_vertical',
         'category'                => __( 'Elements [OpsLens]', 'opslens' ),
-        'description'             => __( 'Add a custom slider bar for breaking news', 'opslens' ),
+        'description'             => __( 'Add a custom Vertical Slider for breaking news', 'opslens' ),
         'show_settings_on_create' => true,
         'weight'                  => -5,
         'params'                  => array(
@@ -47,4 +47,4 @@ function custom_slider_bar_map() {
 
 }
 
-add_action('vc_after_init', 'custom_slider_bar_map');
+add_action('vc_after_init', 'custom_slider_vertical_map');
