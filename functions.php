@@ -198,4 +198,6 @@ if ( function_exists('add_image_size') ) {
     add_image_size('single_img', 636, 297, true );
     /* WPBAKERY CUSTOM SIZES */
     add_image_size('custom_slider_bar', 65, 50, array('center', 'center'));
+    add_image_size('custom_vertical_media', 130, 80, array('center', 'center'));
+    add_image_size('custom_main_news', 795, 660, array('center', 'center'));
 }

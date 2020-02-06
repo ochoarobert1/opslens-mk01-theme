@@ -20,7 +20,7 @@
                         </ul>
                         <?php endif; ?>
                     </div>
-                    <div class="footer-item col-xl col-lg col-md col-sm-12 col-12">
+                    <div class="footer-item col-xl col-lg col-md col-sm-12 col-12 align-self-start">
                         <?php if ( is_active_sidebar( 'sidebar_footer-3' ) ) : ?>
                         <ul id="sidebar-footer3">
                             <?php dynamic_sidebar( 'sidebar_footer-3' ); ?>

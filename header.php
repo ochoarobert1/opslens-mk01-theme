@@ -93,7 +93,9 @@
                                 <?php } ?>
                             </a>
                         </div>
-                        <div class="header-right col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12"></div>
+                        <div class="header-right col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/phone-sprite.png" alt="Download" class="img-fluid img-sprite">
+                        </div>
                     </div>
                 </div>
             </div>
