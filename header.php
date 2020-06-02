@@ -97,7 +97,11 @@
                                 <?php } ?>
                             </a>
                         </div>
+<<<<<<< HEAD
                         <div class="header-right col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 d-xl-block d-lg-block d-md-block d-sm-block d-none">
+=======
+                        <div class="header-right col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
+>>>>>>> c4471abc9d8b0cdea3d50798686240f132f1ed94
                             <img src="<?php echo get_template_directory_uri(); ?>/images/phone-sprite.png" alt="Download" class="img-fluid img-sprite">
                         </div>
                     </div>
