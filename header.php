@@ -46,8 +46,6 @@
     <!--[if IE]> <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script> <![endif]-->
     <!--[if IE]> <script type="text/javascript" src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script> <![endif]-->
     <!--[if IE]> <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" /> <![endif]-->
-    <?php get_template_part('includes/fb-script'); ?>
-    <?php get_template_part('includes/ga-script'); ?>
 </head>
 
 <body class="the-main-body <?php echo join(' ', get_body_class()); ?>" itemscope itemtype="http://schema.org/WebPage">
@@ -57,12 +55,12 @@
             <div class="top-header col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="top-header-left col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6">
-                            <a href="" title="<?php _e('Visit our Facebook Profile', 'opslens'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="" title="<?php _e('Visit our Twitter Profile', 'opslens'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="" title="<?php _e('Visit our Instagram Profile', 'opslens'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <div class="top-header-left col-xl-3 col-lg-2 col-md-2 col-sm-12 col-12">
+                            <a href="https://www.facebook.com/OpsLens/" title="<?php _e('Visit our Facebook Profile', 'opslens'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/opslens" title="<?php _e('Visit our Twitter Profile', 'opslens'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/opslens_ol/" title="<?php _e('Visit our Instagram Profile', 'opslens'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>
                         </div>
-                        <div class="top-header-center col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                        <div class="top-header-center col-xl-6 col-lg-8 col-md-8 col-sm-6 col-6 d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
                             <?php
                                 wp_nav_menu( array(
                                     'theme_location'    => 'topheader_menu',
@@ -72,7 +70,7 @@
                                 ) );
                                 ?>
                         </div>
-                        <div class="top-header-right col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
+                        <div class="top-header-right col-xl-3 col-lg-2 col-md-2 col-sm-6 col-6 d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
                             <div>
                                 <?php echo date('l, F jS'); ?>
                             </div>
@@ -83,8 +81,14 @@
             <div class="the-header col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="container">
                     <div class="row">
-                        <div class="header-left col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12"></div>
-                        <div class="header-center col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="header-left col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+                            <div class="menu-bars d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="header-center col-xl-6 col-lg-6 col-md-6 col-sm-6 col-9">
                             <a class="custom-navbar-brand" href="<?php echo home_url('/');?>" title="<?php echo get_bloginfo('name'); ?>">
                                 <?php ?> <?php $custom_logo_id = get_theme_mod( 'custom_logo' ); ?>
                                 <?php $image = wp_get_attachment_image_src( $custom_logo_id , array('250', '250')); ?>
@@ -93,11 +97,13 @@
                                 <?php } ?>
                             </a>
                         </div>
-                        <div class="header-right col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12"></div>
+                        <div class="header-right col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 d-xl-block d-lg-block d-md-block d-sm-block d-none">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/phone-sprite.png" alt="Download" class="img-fluid img-sprite">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="the-navbar col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="the-navbar col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-xl-block d-lg-block d-md-none d-sm-none d-none">
                 <div class="container">
                     <div class="row no-gutters align-items-center">
                         <div class="navbar-menu col-10">
@@ -116,7 +122,25 @@
                         <div class="navbar-line col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"></div>
                     </div>
                 </div>
+            </div>
 
+            <div class="navbar-mobile navbar-mobile-hidden">
+                <div class="close-button">
+                    <div class="close-button-container">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="navbar-menu-mobile">
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location'    => 'header_menu',
+                            'depth'             => 1,
+                            'container'         => 'div',
+                            'menu_class'        => 'main-navbar-nav'
+                        ) );
+                        ?>
+                </div>
             </div>
         </div>
     </header>

@@ -195,7 +195,65 @@ if ( function_exists('add_theme_support') ) {
 if ( function_exists('add_image_size') ) {
     add_image_size('avatar', 100, 100, true);
     add_image_size('blog_img', 276, 217, true);
-    add_image_size('single_img', 636, 297, true );
+    add_image_size('single_img', 9999, 500, true );
     /* WPBAKERY CUSTOM SIZES */
-    add_image_size('custom_slider_bar', 65, 50, array('center', 'center'));
+    add_image_size('custom_slider_bar', 65, 50, true);
+    add_image_size('custom_vertical_media', 130, 80, true);
+    add_image_size('custom_main_news', 9999, 680, true);
+    add_image_size('custom_vertical_news', 315, 157, true);
+    add_image_size('custom_big_media', 330, 220, true);
+}
+
+function conditional_custom_category_limit( $query ) {
+
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+
+    if ( (is_category('video')) || (is_category('military-videos')))  {
+        $query->set( 'post_type', 'video' );
+        return;
+    }
+
+
+}
+add_action( 'pre_get_posts', 'conditional_custom_category_limit', 1 );
+
+
+//Page Slug Body Class
+function add_slug_body_class( $classes ) {
+    global $post;
+    if ( isset( $post ) ) {
+        $classes[] = $post->post_type . '-' . $post->post_name;
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );
+
+/* --------------------------------------------------------------
+    ADD CUSTOM BANNER ON POST
+-------------------------------------------------------------- */
+function get_auto_banner_contributor () {
+    $user_name = get_the_author_meta( 'display_name' );
+    $banner = get_page_by_title($user_name, null, 'adni_banners');
+    if( !is_null($banner) ) {
+        $adning_args = get_post_meta($banner->ID, '_adning_args', true);
+        echo $adning_args['banner_content'];
+    }
+}
+
+/* --------------------------------------------------------------
+    ADD THUBMNAIL
+-------------------------------------------------------------- */
+function catch_that_image() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches [1] [0];
+
+    if(empty($first_img)){ //Defines a default image
+        $first_img = get_template_directory_uri() . "/images/no-img.jpg";
+    }
+    return $first_img;
 }

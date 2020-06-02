@@ -65,7 +65,7 @@ function opslens_load_css() {
         }
 
         /*- GOOGLE FONTS -*/
-        wp_register_style('google-fonts', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap', false, $version_remove, 'all');
+        wp_register_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Noto+Sans:400,700&display=swap', false, $version_remove, 'all');
         wp_enqueue_style('google-fonts');
 
         /*- MAIN STYLE -*/

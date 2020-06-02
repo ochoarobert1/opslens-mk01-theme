@@ -3,7 +3,7 @@
         <div class="the-footer col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="footer-item footer-fixed col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                    <div class="footer-item footer-fixed col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Logo" class="img-fluid img-logo-footer" />
                     </div>
                     <div class="footer-item col-xl col-lg col-md col-sm-12 col-12">
@@ -20,7 +20,7 @@
                         </ul>
                         <?php endif; ?>
                     </div>
-                    <div class="footer-item col-xl col-lg col-md col-sm-12 col-12">
+                    <div class="footer-item col-xl col-lg col-md col-sm-12 col-12 align-self-start">
                         <?php if ( is_active_sidebar( 'sidebar_footer-3' ) ) : ?>
                         <ul id="sidebar-footer3">
                             <?php dynamic_sidebar( 'sidebar_footer-3' ); ?>
