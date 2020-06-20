@@ -46,10 +46,37 @@
     <!--[if IE]> <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script> <![endif]-->
     <!--[if IE]> <script type="text/javascript" src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script> <![endif]-->
     <!--[if IE]> <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" /> <![endif]-->
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '265467951477030');
+        fbq('track', 'PageView');
+
+    </script>
+
+    <!-- End Facebook Pixel Code -->
 </head>
 
 <body class="the-main-body <?php echo join(' ', get_body_class()); ?>" itemscope itemtype="http://schema.org/WebPage">
     <div id="fb-root"></div>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=265467951477030&ev=PageView&noscript=1" /></noscript>
     <header class="container-fluid p-0" role="banner" itemscope itemtype="http://schema.org/WPHeader">
         <div class="row no-gutters">
             <div class="top-header col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -97,12 +124,23 @@
                                 <?php } ?>
                             </a>
                         </div>
-<<<<<<< HEAD
-                        <div class="header-right col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 d-xl-block d-lg-block d-md-block d-sm-block d-none">
-=======
-                        <div class="header-right col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
->>>>>>> c4471abc9d8b0cdea3d50798686240f132f1ed94
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/phone-sprite.png" alt="Download" class="img-fluid img-sprite">
+
+                        <div class="header-right align-self-end col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 d-xl-block d-lg-block d-md-block d-sm-block d-none">
+                            <div class="header-right-container">
+                                <div class="header-buttons-text">
+                                    <h2>New App <span>Download Now</span></h2>
+                                    <div class="header-right-buttons-container">
+                                        <a href="https://apps.apple.com/us/app/opslens-network/id1498033459" title="Download from Appstore" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/appstore.png" alt="Download from Appstore" class="img-fluid" />
+                                        </a>
+                                        <a href="https://play.google.com/store/apps/details?id=com.streann.opslens" title="Download from Google Play" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/googleplay.png" alt="Download from Google Play" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/phone-hand.png" alt="Download" class="img-fluid img-sprite">
+                            </div>
+
                         </div>
                     </div>
                 </div>
