@@ -76,12 +76,12 @@ a {
     font-size: 0.8rem;
 }
 
-.search-box + label {
+.search-box+label {
     position: absolute;
     top: 2px;
 }
 
-.search-box + label .search-icon {
+.search-box+label .search-icon {
     color: black;
 }
 
@@ -91,7 +91,7 @@ a {
 
 }
 
-.search-box:hover + label .search-icon {
+.search-box:hover+label .search-icon {
     color: white;
 }
 
@@ -109,12 +109,12 @@ a {
 
 }
 
-.search-box:focus + label {
+.search-box:focus+label {
     position: absolute;
     top: 2px;
 }
 
-.search-box:focus + label .search-icon {
+.search-box:focus+label .search-icon {
     color: black;
 }
 
@@ -132,6 +132,14 @@ a {
     left: -22px;
     color: white;
     cursor: pointer;
+}
+
+.img-source {
+    height: auto !important;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    max-width: 130px;
 }
 
 
@@ -182,6 +190,8 @@ a {
 
 .the-header {
     background: url(../images/banner_header.jpg);
+    background-size: cover;
+
 
     & .header-center {
         text-align: center;
@@ -860,6 +870,10 @@ a {
             flex: 0 0 50%;
             margin-right: 10px;
 
+            & .img-source {
+                max-width: 70px !important;
+            }
+
             & .category {
                 position: absolute;
                 top: 15px;
@@ -962,8 +976,13 @@ a {
                 }
 
                 & .latest-news-media-item-image {
+                    position: relative;
                     margin-left: 10px;
                     flex: 0 0 38.5%;
+
+                    & .img-source {
+                        max-width: 75px !important;
+                    }
                 }
             }
         }
@@ -1360,13 +1379,18 @@ a {
     }
 
     & picture {
+        margin-bottom: 1rem;
+        display: block !important;
+        position: relative;
 
         & img {
             width: 100%;
             height: auto;
         }
 
-        margin-bottom: 1rem;
+        .img-source {
+            max-width: 170px !important;
+        }
     }
 
     & .post-content {
@@ -1402,4 +1426,81 @@ a {
             }
         }
     }
+}
+
+.author-desc {
+    max-width: 50vw;
+    margin: 0 auto;
+    color: black;
+}
+
+
+.the-header .header-center {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-right-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4rem;
+
+    & .header-buttons-text {
+        color: white;
+        line-height: 1.5rem;
+        font-size: 1rem;
+        text-align: left;
+        max-width: 350px;
+        padding: 2rem 0;
+        padding-left: 2rem;
+
+        & p {
+            margin-bottom: 5px;
+        }
+    }
+
+    & .btn-header {
+        background: #f71a13;
+        border-radius: 0;
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 300;
+        padding: 0.3rem 1rem;
+        padding-right: 3rem;
+        text-transform: uppercase;
+    }
+
+    & .header-right-buttons-container img {
+        max-width: 120px;
+        margin: .5rem 0;
+        border: 2px solid white;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    & .roku-apple-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    & .roku-apple-header img {
+        max-width: 80px;
+        margin-left: 12px;
+    }
+}
+
+.black-text {
+    color: @black  !important;
+}
+
+.black-text .roku-apple-header img {
+    .filter(invert(1));
+}
+
+.footer-banner .img-sprite {
+    width: 400px !important;
 }

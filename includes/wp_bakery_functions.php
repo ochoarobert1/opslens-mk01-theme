@@ -29,6 +29,7 @@ add_action( 'vc_before_init', 'vc_opslens_setup' );
 /* CALL FILE DEPENDENCIES (CSS / JS / AJAX HANDLER)
 -------------------------------------------------------------- */
 function vc_pahoy_frontend_scripts_caller() {
+    $version_remove = NULL;
     /*- MAIN STYLE -*/
     wp_register_style('vc-opslens-style', get_template_directory_uri() . '/css/vc-opslens-style.css', false, $version_remove, 'all');
     wp_enqueue_style('vc-opslens-style');

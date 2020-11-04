@@ -9,16 +9,14 @@
                     </div>
                     <div class="w-100"></div>
                     <div class="col-12">
-                        <h1 class="text-center"><?php _e('Error 404', 'opslens'); ?></h1>
+                        <h1 class="text-center"><?php _e('404 Error', 'opslens'); ?></h1>
                         <hr>
-                        <h4 class="text-center"><?php _e('No podemos encontrar la página que buscas. Dirígete nuevamente al', 'opslens'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php _e('Volver al Inicio', 'opslens'); ?>"><?php _e('inicio', 'opslens'); ?></a>.</h4>
+                        <h4 class="text-center"><?php _e('We cannot find the page you are looking for. Go back to', 'opslens'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php _e('Back to home', 'opslens'); ?>"><?php _e('home', 'opslens'); ?></a>.</h4>
                     </div>
                     <div class="w-100"></div>
                 </div>
             </div>
-
         </article>
-
     </div>
 </main>
 <?php get_footer(); ?>

@@ -85,8 +85,8 @@
                     </aside>
                     <?php else: ?>
                     <section>
-                        <h2><?php _e('Disculpe, su busqueda no arrojo ningun resultado', 'opslens'); ?></h2>
-                        <h3><?php _e('Dirígete nuevamente al', 'opslens'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php _e('Volver al Inicio', 'opslens'); ?>"><?php _e('inicio', 'opslens'); ?></a>.</h3>
+                          <h2><?php _e('Sorry, your seach did not have any results', 'opslens'); ?></h2>
+                        <h3><?php _e('Go back to ', 'opslens'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php _e('Back to Home', 'opslens'); ?>"><?php _e('Home', 'opslens'); ?></a>.</h3>
                     </section>
                     <?php endif; ?>
                 </div>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="footer-banner-image col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/phone-sprite.png" alt="Download" class="img-fluid">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/phone-hand.png" alt="Download" class="img-fluid">
                     </div>
                 </div>
             </div>

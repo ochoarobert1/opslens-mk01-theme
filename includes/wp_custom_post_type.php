@@ -109,3 +109,64 @@ function opslens_custom_post_type() {
 
 }
 add_action( 'init', 'opslens_custom_post_type', 0 );
+
+// Register Custom Taxonomy
+function opslens_sources() {
+
+    $labels = array(
+        'name'                       => _x( 'Sources', 'Taxonomy General Name', 'opslens' ),
+        'singular_name'              => _x( 'Source', 'Taxonomy Singular Name', 'opslens' ),
+        'menu_name'                  => __( 'Sources', 'opslens' ),
+        'all_items'                  => __( 'All Sources', 'opslens' ),
+        'parent_item'                => __( 'Parent Source', 'opslens' ),
+        'parent_item_colon'          => __( 'Parent Source:', 'opslens' ),
+        'new_item_name'              => __( 'New Source Name', 'opslens' ),
+        'add_new_item'               => __( 'Add New Source', 'opslens' ),
+        'edit_item'                  => __( 'Edit Source', 'opslens' ),
+        'update_item'                => __( 'Update Source', 'opslens' ),
+        'view_item'                  => __( 'View Source', 'opslens' ),
+        'separate_items_with_commas' => __( 'Separate Sources with commas', 'opslens' ),
+        'add_or_remove_items'        => __( 'Add or remove Sources', 'opslens' ),
+        'choose_from_most_used'      => __( 'Choose from the most used', 'opslens' ),
+        'popular_items'              => __( 'Popular Sources', 'opslens' ),
+        'search_items'               => __( 'Search Sources', 'opslens' ),
+        'not_found'                  => __( 'Not Found', 'opslens' ),
+        'no_terms'                   => __( 'No Sources', 'opslens' ),
+        'items_list'                 => __( 'Sources list', 'opslens' ),
+        'items_list_navigation'      => __( 'Sources list navigation', 'opslens' ),
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+        'show_in_rest'               => true,
+    );
+    register_taxonomy( 'sources', array( 'post' ), $args );
+
+}
+add_action( 'init', 'opslens_sources', 0 );
+
+
+function manage_my_category_columns($columns)
+{
+    $columns['icon'] = 'Icon/Logo';
+    return $columns;
+}
+
+add_filter('manage_edit-category_columns','manage_my_category_columns');
+add_filter('manage_edit-sources_columns','manage_my_category_columns');
+
+function manage_category_custom_fields($deprecated,$column_name,$term_id)
+{
+    if ($column_name == 'icon') {
+        $icon_id = get_term_meta($term_id, 'ops_cat_icon_id', true);
+
+        echo wp_get_attachment_image( $icon_id, 'custom_logo', false, array( "class" => "img-responsive" ) );
+    }
+}
+add_filter ('manage_category_custom_column', 'manage_category_custom_fields', 10,3);
+add_filter ('manage_sources_custom_column', 'manage_category_custom_fields', 10,3);

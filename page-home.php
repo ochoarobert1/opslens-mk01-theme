@@ -10,7 +10,7 @@
                     </div>
                     <div class="main-bar-slider-container col-xl-9 col-lg-9 col-md-8 col-sm-8 col-12">
                         <div class="main-bar-slider-carousel owl-carousel owl-theme">
-                            <?php $args = array('post_type' => 'post', 'posts_per_page' => 6, 'order' => 'DESC', 'orderby' => 'date', 'category_name' => 'featured,opslens'); ?>
+                            <?php $args = array('post_type' => 'post', 'posts_per_page' => 6, 'order' => 'DESC', 'orderby' => 'date', 'category_name' => 'featured,opslens,recent'); ?>
                             <?php $array_posts = new WP_Query($args); ?>
                             <?php if ($array_posts->have_posts()) : ?>
                             <?php while ($array_posts->have_posts()) : $array_posts->the_post(); ?>
@@ -43,6 +43,20 @@
                 </div>
             </div>
         </section>
+
+        <section class="banner-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="container">
+                <div class="row">
+                    <div class="shop-banner-content col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <a href="<?php echo home_url('/store'); ?>" title="go to opslens store">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/shop-banner.jpg" alt="" class="img-fluid" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <?php /*
         <section class="main-video-trailer-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="container">
                 <div class="row">
@@ -54,6 +68,7 @@
                 </div>
             </div>
         </section>
+        */ ?>
 
         <section class="main-featured-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="container">
@@ -85,7 +100,7 @@
                                         <?php $categories = get_the_category(); ?>
                                         <?php $i = 1; ?>
                                         <?php foreach ($categories as $item) { ?>
-                                        <a href="<?php echo get_category_link($item); ?>" title="<?php _e('View more from this category', 'opslens'); ?>" class="category">OPSLENS</a>
+                                        <a href="<?php echo get_category_link($item); ?>" title="<?php _e('View more from this category', 'opslens'); ?>" class="category"><?php echo $item->name; ?></a>
                                         <?php if ($i == 1) { break; }?>
                                         <?php $i++; } ?>
                                         <a href="<?php the_permalink(); ?>" title="<?php _e('View post', 'opslens'); ?>">
@@ -123,9 +138,11 @@
                                             <?php $categories = get_the_category(); ?>
                                             <?php $i = 1; ?>
                                             <?php foreach ($categories as $item) { ?>
-                                            <a href="<?php echo get_category_link($item); ?>" title="<?php _e('View more from this category', 'opslens'); ?>" class="category">OPSLENS</a>
+                                            <a href="<?php echo get_category_link($item); ?>" title="<?php _e('View more from this category', 'opslens'); ?>" class="category"><?php echo $item->name; ?></a>
                                             <?php if ($i == 1) { break; }?>
                                             <?php $i++; } ?>
+
+                                            <?php echo get_sources_logo(); ?>
                                         </div>
                                         <a href="<?php the_permalink(); ?>" title="<?php _e('View post', 'opslens'); ?>">
                                             <h3><?php the_title(); ?></h3>
@@ -147,11 +164,11 @@
                             <h3><?php _e('Shows', 'opslens'); ?></h3>
                         </div>
                         <div id="ticker2" class="vertical-video-slider-container">
-                            <div class="vertical-video-item">
+                            <div class="vertical-video-item" style="">
                                 <div class="vertical-video-item-wrapper">
                                     <div class="vertical-video-item-image">
-                                        <a href="http://opslens.com/chrisxradio/">
-                                            <img src="http://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_06.png" alt="no image" class="img-fluid">
+                                        <a href="https://opslens.com/the-matt-locke-show/">
+                                            <img src="https://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_01.png" alt="no image" class="img-fluid">
                                         </a>
                                     </div>
                                 </div>
@@ -159,17 +176,8 @@
                             <div class="vertical-video-item" style="">
                                 <div class="vertical-video-item-wrapper">
                                     <div class="vertical-video-item-image">
-                                        <a href="http://opslens.com/the-matt-locke-show/">
-                                            <img src="http://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_01.png" alt="no image" class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="vertical-video-item" style="">
-                                <div class="vertical-video-item-wrapper">
-                                    <div class="vertical-video-item-image">
-                                        <a href="http://opslens.com/the-situation-room/">
-                                            <img src="http://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_02.png" alt="no image" class="img-fluid">
+                                        <a href="https://opslens.com/the-situation-room/">
+                                            <img src="https://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_02.png" alt="no image" class="img-fluid">
                                         </a>
                                     </div>
                                 </div>
@@ -178,7 +186,7 @@
                                 <div class="vertical-video-item-wrapper">
                                     <div class="vertical-video-item-image">
                                         <a href="">
-                                            <img src="http://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_03.png" alt="no image" class="img-fluid">
+                                            <img src="https://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_03.png" alt="no image" class="img-fluid">
                                         </a>
                                     </div>
                                 </div>
@@ -187,7 +195,7 @@
                                 <div class="vertical-video-item-wrapper">
                                     <div class="vertical-video-item-image">
                                         <a href="">
-                                            <img src="http://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_04.png" alt="no image" class="img-fluid">
+                                            <img src="https://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_04.png" alt="no image" class="img-fluid">
                                         </a>
                                     </div>
                                 </div>
@@ -196,7 +204,16 @@
                                 <div class="vertical-video-item-wrapper">
                                     <div class="vertical-video-item-image">
                                         <a href="">
-                                            <img src="http://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_05.png" alt="no image" class="img-fluid">
+                                            <img src="https://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_05.png" alt="no image" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vertical-video-item">
+                                <div class="vertical-video-item-wrapper">
+                                    <div class="vertical-video-item-image">
+                                        <a href="">
+                                            <img src="https://opslens.com/wp-content/themes/opslens-mk01-theme/images/shows_banner_07.png" alt="no image" class="img-fluid">
                                         </a>
                                     </div>
                                 </div>
@@ -207,6 +224,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Opslens - Home Main Banner -->
         <div class="container">
             <div class="row">
@@ -214,8 +232,24 @@
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8621199295186450" data-ad-slot="7043337497" data-ad-format="auto" data-full-width-responsive="true"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
-
                     </script>
+                    <div id="opslens_leaderboard" data-google-query-id="COL7i6WalOwCFdTZhwod2R4CuA">
+                        <div id="google_ads_iframe_/184419101/Display/opslens_2__container__" style="border: 0pt none; width: 728px; height: 90px;"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <aside class="ads-container col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <a href="https://verveforever.com/?rfsn=4248314.8fcccb" target="_blank">
+                        <img src="<?php echo get_template_directory_uri() ?>/images/banner-leaderboard.png" alt="" class="img-fluid" />
+                    </a>
+                </aside>
+                <aside class="ads-container col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <a href="https://bit.ly/32IOG2T" target="_blank">
+                        <img src="https://opslens.com/files/2020/10/Frog-Fuel-728x90-1.png" alt="" class="img-fluid" />
+                    </a>
                 </aside>
             </div>
         </div>
@@ -244,6 +278,7 @@
                                 <?php } ?>
                                 <?php $categories = get_the_category(); ?>
                                 <?php $i = 1; ?>
+                                <?php echo get_sources_logo(); ?>
                                 <?php foreach ($categories as $item) { ?>
                                 <a href="<?php echo get_category_link($item); ?>" title="<?php _e('View more from this category', 'opslens'); ?>" class="category"><?php echo $item->name; ?></a>
                                 <?php if ($i == 1) { break; }?>
@@ -257,7 +292,7 @@
                         </div>
                         <?php endif; ?>
                         <?php wp_reset_query(); ?>
-                        <?php $args = array('post_type' => 'post', 'posts_per_page' => 2, 'post__not_in' => $array_posted, 'order' => 'DESC', 'orderby' => 'date'); ?>
+                        <?php $args = array('post_type' => 'post', 'posts_per_page' => 3, 'post__not_in' => $array_posted, 'order' => 'DESC', 'orderby' => 'date'); ?>
                         <?php $array_posts = new WP_Query($args); ?>
                         <?php if ($array_posts->have_posts()) : ?>
                         <?php while ($array_posts->have_posts()) : $array_posts->the_post(); ?>
@@ -271,6 +306,7 @@
                                     <?php $image = '<img src="' . catch_that_image() . '" alt="" class="img-fluid" />'; ?>
                                     <?php echo $image; ?>
                                     <?php } ?>
+                                    <?php echo get_sources_logo(); ?>
                                     <?php $categories = get_the_category(); ?>
                                     <?php $i = 1; ?>
                                     <?php foreach ($categories as $item) { ?>
@@ -298,14 +334,15 @@
                                     <ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fa+5o+4b-dm+b5" data-ad-client="ca-pub-8621199295186450" data-ad-slot="4469776906"></ins>
                                     <script>
                                         (adsbygoogle = window.adsbygoogle || []).push({});
-
                                     </script>
                                 </aside>
                             </div>
                         </div>
+
                     </div>
                     <?php /* BLOQUE 1 - SIDEBAR */?>
                     <div class="block1-sidebar-news col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+
                         <div class="row">
                             <?php $args = array('post_type' => 'post', 'posts_per_page' => 2, 'post__not_in' => $array_posted, 'order' => 'DESC', 'orderby' => 'date'); ?>
                             <?php $array_posts = new WP_Query($args); ?>
@@ -321,6 +358,7 @@
                                     <?php echo $image; ?>
                                     <?php } ?>
                                     <?php $i = 1; ?>
+                                    <?php echo get_sources_logo(); ?>
                                     <?php $categories = get_the_category(); ?>
                                     <?php foreach ($categories as $item) { ?>
                                     <a href="<?php echo get_category_link($item); ?>" title="<?php _e('View more from this category', 'opslens'); ?>" class="category"><?php echo $item->name; ?></a>
@@ -347,8 +385,11 @@
                                         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8621199295186450" data-ad-slot="4673597519" data-ad-format="auto" data-full-width-responsive="true"></ins>
                                         <script>
                                             (adsbygoogle = window.adsbygoogle || []).push({});
-
                                         </script>
+
+                                        <div id="opslens_rectangle">
+                                            <div id="google_ads_iframe_/184419101/Display/opslens_0__container__" style="border: 0pt none; width: 300px; height: 250px;"></div>
+                                        </div>
                                     </aside>
                                 </div>
                             </div>
@@ -367,6 +408,7 @@
                                             <div class="latest-news-media-item-content">
                                                 <?php $categories = get_the_category(); ?>
                                                 <?php $i = 1; ?>
+
                                                 <?php foreach ($categories as $item) { ?>
                                                 <a href="<?php echo get_category_link($item); ?>" title="<?php _e('View more from this category', 'opslens'); ?>" class="category"><?php echo $item->name; ?></a>
                                                 <?php if ($i == 1) { break; }?>
@@ -379,6 +421,7 @@
                                                 </div>
                                             </div>
                                             <div class="latest-news-media-item-image">
+                                                <?php echo get_sources_logo(); ?>
                                                 <?php $thumb = get_the_post_thumbnail(get_the_ID()); ?>
                                                 <?php if(!empty($thumb)) { ?>
                                                 <?php the_post_thumbnail('custom_vertical_news', array('class' => 'img-fluid')); ?>
@@ -612,23 +655,24 @@
     </div>
 
     <section class="footer-banner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="footer-banner-content col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/download.png" alt="Logo" class="img-fluid" />
-                    <div class="buttons-container">
-                        <a href="https://apps.apple.com/us/app/opslens-network/id1498033459" target="_blank">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/appstore.png" alt="Logo" class="img-fluid" />
-                        </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.streann.opslens" target="_blank">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/googleplay.png" alt="Logo" class="img-fluid" />
-                        </a>
-                    </div>
+        <div class="header-right-container d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/header-banner.png" alt="Download" class="img-fluid img-sprite d-xl-block d-lg-block d-md-none d-sm-none d-none">
+            <div class="header-buttons-text black-text">
+                <p>Feel Free to express yourself without censorship</p>
+                <a href="" class="btn btn-md btn-header">Download Now</a>
+                <div class="header-right-buttons-container">
+                    <a href="https://apps.apple.com/us/app/opslens-network/id1498033459" title="Download from Appstore" target="_blank">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/appstore.png" alt="Download from Appstore" class="img-fluid" />
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.streann.opslens" title="Download from Google Play" target="_blank">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/googleplay.png" alt="Download from Google Play" class="img-fluid" />
+                    </a>
                 </div>
-                <div class="footer-banner-image col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 d-xl-block d-lg-block d-md-block d-sm-block d-none">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/phone-hand.png" alt="Download" class="img-fluid">
+                <div class="roku-apple-header">
+                    Available on <a href="https://channelstore.roku.com/es-co/details/6fc5e6d04955bd6a48e5992289f4a0d2/opslens-network" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/roku.png" alt="" class="img-fluid"></a> <a href="https://apps.apple.com/us/app/opslens-network/id1498033459#?platform=appleTV" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/appletv.png" alt="" class="img-fluid"></a>
                 </div>
             </div>
+
         </div>
     </section>
     </div>

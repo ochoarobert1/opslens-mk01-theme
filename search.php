@@ -31,10 +31,10 @@
                                                 <h2 rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></h2>
                                             </a>
                                             <time class="date" datetime="<?php echo get_the_time('Y-m-d') ?>" itemprop="datePublished"><?php the_time('d-m-Y'); ?></time>
-                                            <span class="author" itemprop="author" itemscope itemptype="http://schema.org/Person"><?php _e('Publicado por:', 'opslens'); ?> <?php the_author_posts_link(); ?></span>
+                                            <span class="author" itemprop="author" itemscope itemptype="http://schema.org/Person"><?php _e('Published by:', 'opslens'); ?> <?php the_author_posts_link(); ?></span>
                                         </header>
                                         <p><?php the_excerpt(); ?></p>
-                                        <a href="<?php the_permalink(); ?>" title="<?php _e('Leer Más', 'opslens'); ?>" class="btn btn-md btn-dark"><?php _e('Leer Más', 'opslens'); ?></a>
+                                        <a href="<?php the_permalink(); ?>" title="<?php _e('Leer Más', 'opslens'); ?>" class="btn btn-md btn-dark"><?php _e('Read More', 'opslens'); ?></a>
                                     </div>
                                 </div>
                             </div>

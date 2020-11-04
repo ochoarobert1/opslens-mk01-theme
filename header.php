@@ -30,12 +30,16 @@
     <meta name="ICBM" content="30.199071,-81.3829749" />
     <meta name="geo.region" content="US" />
     <meta name="geo.placename" content="822 A1a North # 310, Ponte Vedra Beach, FL 32082" />
-    <meta name="DC.title" content="<?php if (is_home()) { echo get_bloginfo('name') . ' | ' . get_bloginfo('description'); } else { echo get_the_title() . ' | ' . get_bloginfo('name'); } ?>" />
+    <meta name="DC.title" content="<?php if (is_home()) {
+                                        echo get_bloginfo('name') . ' | ' . get_bloginfo('description');
+                                    } else {
+                                        echo get_the_title() . ' | ' . get_bloginfo('name');
+                                    } ?>" />
     <?php /* MAIN TITLE - CALL HEADER MAIN FUNCTIONS */ ?>
     <?php wp_title('|', false, 'right'); ?>
     <?php wp_head() ?>
     <?php /* OPEN GRAPHS INFO - COMMENTS SCRIPTS */ ?>
-    <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
+    <?php if (is_singular() && get_option('thread_comments')) wp_enqueue_script('comment-reply'); ?>
     <?php /* IE COMPATIBILITIES */ ?>
     <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7" /><![endif]-->
     <!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8" /><![endif]-->
@@ -68,7 +72,6 @@
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '265467951477030');
         fbq('track', 'PageView');
-
     </script>
 
     <!-- End Facebook Pixel Code -->
@@ -89,13 +92,13 @@
                         </div>
                         <div class="top-header-center col-xl-6 col-lg-8 col-md-8 col-sm-6 col-6 d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
                             <?php
-                                wp_nav_menu( array(
-                                    'theme_location'    => 'topheader_menu',
-                                    'depth'             => 0, // 1 = with dropdowns, 0 = no dropdowns.
-                                    'container'         => 'div',
-                                    'menu_class'        => 'custom-navbar-nav'
-                                ) );
-                                ?>
+                            wp_nav_menu(array(
+                                'theme_location'    => 'topheader_menu',
+                                'depth'             => 0, // 1 = with dropdowns, 0 = no dropdowns.
+                                'container'         => 'div',
+                                'menu_class'        => 'custom-navbar-nav'
+                            ));
+                            ?>
                         </div>
                         <div class="top-header-right col-xl-3 col-lg-2 col-md-2 col-sm-6 col-6 d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
                             <div>
@@ -107,28 +110,28 @@
             </div>
             <div class="the-header col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="container">
-                    <div class="row">
-                        <div class="header-left col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
-                            <div class="menu-bars d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                    <div class="row align-items-center">
+                        <div class="header-center col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="header-left">
+                                <div class="menu-bars d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="header-center col-xl-6 col-lg-6 col-md-6 col-sm-6 col-9">
-                            <a class="custom-navbar-brand" href="<?php echo home_url('/');?>" title="<?php echo get_bloginfo('name'); ?>">
-                                <?php ?> <?php $custom_logo_id = get_theme_mod( 'custom_logo' ); ?>
-                                <?php $image = wp_get_attachment_image_src( $custom_logo_id , array('250', '250')); ?>
+
+                            <a class="custom-navbar-brand" href="<?php echo home_url('/'); ?>" title="<?php echo get_bloginfo('name'); ?>">
+                                <?php ?> <?php $custom_logo_id = get_theme_mod('custom_logo'); ?>
+                                <?php $image = wp_get_attachment_image_src($custom_logo_id, array('250', '250')); ?>
                                 <?php if (!empty($image)) { ?>
-                                <img src="<?php echo $image[0];?>" alt="<?php echo get_bloginfo('name'); ?>" class="img-fluid img-logo" />
+                                    <img src="<?php echo $image[0]; ?>" alt="<?php echo get_bloginfo('name'); ?>" class="img-fluid img-logo" />
                                 <?php } ?>
                             </a>
-                        </div>
-
-                        <div class="header-right align-self-end col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 d-xl-block d-lg-block d-md-block d-sm-block d-none">
-                            <div class="header-right-container">
+                            <div class="header-right-container d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/header-banner.png" alt="Download" class="img-fluid img-sprite d-xl-block d-lg-block d-md-none d-sm-none d-none">
                                 <div class="header-buttons-text">
-                                    <h2>New App <span>Download Now</span></h2>
+                                    <p>Feel Free to express yourself without censorship</p>
+                                    <a href="" class="btn btn-md btn-header">Download Now</a>
                                     <div class="header-right-buttons-container">
                                         <a href="https://apps.apple.com/us/app/opslens-network/id1498033459" title="Download from Appstore" target="_blank">
                                             <img src="<?php echo get_template_directory_uri(); ?>/images/appstore.png" alt="Download from Appstore" class="img-fluid" />
@@ -137,10 +140,12 @@
                                             <img src="<?php echo get_template_directory_uri(); ?>/images/googleplay.png" alt="Download from Google Play" class="img-fluid" />
                                         </a>
                                     </div>
+                                    <div class="roku-apple-header">
+                                        Available on <a href="https://channelstore.roku.com/es-co/details/6fc5e6d04955bd6a48e5992289f4a0d2/opslens-network" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/roku.png" alt="" class="img-fluid"></a> <a href="https://apps.apple.com/us/app/opslens-network/id1498033459#?platform=appleTV" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/appletv.png" alt="" class="img-fluid"></a>
+                                    </div>
                                 </div>
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/phone-hand.png" alt="Download" class="img-fluid img-sprite">
+                                
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -150,13 +155,13 @@
                     <div class="row no-gutters align-items-center">
                         <div class="navbar-menu col-10">
                             <?php
-                                wp_nav_menu( array(
-                                    'theme_location'    => 'header_menu',
-                                    'depth'             => 1,
-                                    'container'         => 'div',
-                                    'menu_class'        => 'main-navbar-nav'
-                                ) );
-                                ?>
+                            wp_nav_menu(array(
+                                'theme_location'    => 'header_menu',
+                                'depth'             => 1,
+                                'container'         => 'div',
+                                'menu_class'        => 'main-navbar-nav'
+                            ));
+                            ?>
                         </div>
                         <div class="navbar-search col-2">
                             <?php get_template_part('searchform-special'); ?>
@@ -175,13 +180,13 @@
                 </div>
                 <div class="navbar-menu-mobile">
                     <?php
-                        wp_nav_menu( array(
-                            'theme_location'    => 'header_menu',
-                            'depth'             => 1,
-                            'container'         => 'div',
-                            'menu_class'        => 'main-navbar-nav'
-                        ) );
-                        ?>
+                    wp_nav_menu(array(
+                        'theme_location'    => 'header_menu',
+                        'depth'             => 1,
+                        'container'         => 'div',
+                        'menu_class'        => 'main-navbar-nav'
+                    ));
+                    ?>
                 </div>
             </div>
         </div>

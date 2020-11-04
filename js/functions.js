@@ -1,19 +1,11 @@
 document.addEventListener("touchstart", function () {}, true);
 
 function ticker() {
-<<<<<<< HEAD
-    jQuery('#ticker div.vertical-media-item:first-child').slideUp(function () {
-        jQuery(this).appendTo(jQuery('#ticker')).fadeIn();
-    });
-
-    jQuery('#ticker2 div.vertical-video-item:first-child').slideUp(function () {
-=======
     jQuery('#ticker div.vertical-media-item:first-child').slideUp(function() {
         jQuery(this).appendTo(jQuery('#ticker')).fadeIn();
     });
 
     jQuery('#ticker2 div.vertical-video-item:first-child').slideUp(function() {
->>>>>>> c4471abc9d8b0cdea3d50798686240f132f1ed94
         jQuery(this).appendTo(jQuery('#ticker2')).fadeIn();
     });
 }
@@ -59,32 +51,8 @@ jQuery(document).ready(function ($) {
     jQuery('.main-bar-slider-carousel').owlCarousel({
         items: 4,
         margin: 20,
-<<<<<<< HEAD
-        loop: true,
-        nav: true,
-        dots: false,
-        autoplay: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            768: {
-                items: 2
-            },
-            991: {
-                items: 2
-            },
-            1024: {
-                items: 4
-            }
-        }
-=======
         nav: false,
         dots: false
->>>>>>> c4471abc9d8b0cdea3d50798686240f132f1ed94
     });
 
     jQuery('#ticker').on({
@@ -97,15 +65,6 @@ jQuery(document).ready(function ($) {
     });
 
     jQuery('#ticker2').on({
-<<<<<<< HEAD
-        mouseenter: function () {
-            clearInterval(timer);
-        },
-        mouseleave: function () {
-            timer = setInterval(ticker, 3000);
-        }
-    });
-=======
         mouseenter: function(){
             clearInterval(timer);
         },
@@ -114,6 +73,5 @@ jQuery(document).ready(function ($) {
         }
     });
 
->>>>>>> c4471abc9d8b0cdea3d50798686240f132f1ed94
 
 });

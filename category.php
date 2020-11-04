@@ -45,6 +45,11 @@
                     <?php if (have_posts()) : ?>
                     <section class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
                         <div class="row">
+                            <div class="ads-container col-12">
+                                <div id="opslens_leaderboard" data-google-query-id="COL7i6WalOwCFdTZhwod2R4CuA">
+                                    <div id="google_ads_iframe_/184419101/Display/opslens_2__container__" style="border: 0pt none; width: 728px; height: 90px;"></div>
+                                </div>
+                            </div>
                             <?php $defaultatts = array('class' => 'img-fluid', 'itemprop' => 'image'); ?>
                             <?php while (have_posts()) : the_post(); ?>
                             <article id="post-<?php the_ID(); ?>" class="archive-item col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 <?php echo join(' ', get_post_class()); ?>" role="article">
@@ -85,8 +90,8 @@
                     </aside>
                     <?php else: ?>
                     <section>
-                        <h2><?php _e('Disculpe, su busqueda no arrojo ningun resultado', 'opslens'); ?></h2>
-                        <h3><?php _e('Dirígete nuevamente al', 'opslens'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php _e('Volver al Inicio', 'opslens'); ?>"><?php _e('inicio', 'opslens'); ?></a>.</h3>
+                        <h2><?php _e('Sorry, your seach did not have any results', 'opslens'); ?></h2>
+                        <h3><?php _e('Go back to ', 'opslens'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php _e('Back to Home', 'opslens'); ?>"><?php _e('Home', 'opslens'); ?></a>.</h3>
                     </section>
                     <?php endif; ?>
                 </div>
@@ -98,7 +103,7 @@
                     <div class="footer-banner-content col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/download.png" alt="Logo" class="img-fluid" />
                         <div class="buttons-container">
-                          <a href="https://apps.apple.com/us/app/opslens-network/id1498033459" target="_blank">
+                            <a href="https://apps.apple.com/us/app/opslens-network/id1498033459" target="_blank">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/appstore.png" alt="Logo" class="img-fluid" />
                             </a>
                             <a href="https://play.google.com/store/apps/details?id=com.streann.opslens" target="_blank">
@@ -107,7 +112,7 @@
                         </div>
                     </div>
                     <div class="footer-banner-image col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/phone-sprite.png" alt="Download" class="img-fluid">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/phone-hand.png" alt="Download" class="img-fluid">
                     </div>
                 </div>
             </div>
