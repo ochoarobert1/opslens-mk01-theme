@@ -10,7 +10,7 @@
                     </div>
                     <div class="main-show-slider-content  col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
                         <div class="main-shows-slider-carousel owl-carousel owl-theme">
-                            <?php $args = array('post_type' => 'opslenstv', 'posts_per_page' => 5); ?>
+                            <?php $args = array('post_type' => 'opslenstv', 'posts_per_page' => -1); ?>
                             <?php $array_posts = new WP_Query($args); ?>
                             <?php if ($array_posts->have_posts()) : ?>
                                 <?php while ($array_posts->have_posts()) : $array_posts->the_post(); ?>
