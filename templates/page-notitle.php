@@ -17,6 +17,12 @@
                     <div class="section-container col-12">
                         <?php the_content(); ?>
                     </div>
+                    <div class="ads-container col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div id='rectangle_1'></div>
+                    </div>
+                    <div class="ads-container col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div id='rectangle_2'></div>
+                    </div>
                 </div>
             </div>
         </section>

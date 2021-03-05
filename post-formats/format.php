@@ -2,9 +2,7 @@
 <?php $defaultatts = array('class' => 'img-fluid', 'itemprop' => 'image'); ?>
 <article id="post-<?php the_ID(); ?>" class="the-single col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 <?php echo join(' ', get_post_class()); ?>" itemscope itemtype="http://schema.org/Article">
     <div class="ads-container col-12">
-        <div id="opslens_leaderboard" data-google-query-id="COL7i6WalOwCFdTZhwod2R4CuA">
-            <div id="google_ads_iframe_/184419101/Display/opslens_2__container__" style="border: 0pt none; width: 728px; height: 90px;"></div>
-        </div>
+        <div id="leaderboard_1"></div>
     </div>
     <div class="ads-single-content">
         <?php echo get_auto_banner_contributor(); ?>
@@ -38,5 +36,8 @@
     <?php if ( comments_open() ) { comments_template(); } ?>
     <div class="ads-single-content">
         <?php echo get_auto_banner_contributor(); ?>
+    </div>
+    <div class="ads-container col-12">
+        <div id="leaderboard_2"></div>
     </div>
 </article> <?php // end article ?>

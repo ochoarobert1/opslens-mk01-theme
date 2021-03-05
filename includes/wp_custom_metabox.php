@@ -32,4 +32,18 @@ function opslens_register_custom_metabox() {
         'preview_size' => 'medium'
     ) );
 
+
+    $cmb_opslenstv_metabox = new_cmb2_box( array(
+        'id'            => $prefix . 'opslenstv_metabox',
+        'title'         => esc_html__( 'Chat Metabox', 'opslens' ),
+        'object_types'     => array( 'opslenstv' )
+    ) );
+
+    $cmb_opslenstv_metabox->add_field( array(
+        'id'   => $prefix . 'chat_code',
+        'name' => esc_html__( 'Chat Code', 'opslens' ),
+        'desc' => esc_html__( 'Enter the chat code for this program', 'opslens' ),
+        'type' => 'textarea_code'
+    ) );
+
 }

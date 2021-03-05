@@ -1,4 +1,4 @@
-document.addEventListener("touchstart", function () {}, true);
+document.addEventListener("touchstart", function() {}, true);
 
 function ticker() {
     jQuery('#ticker div.vertical-media-item:first-child').slideUp(function() {
@@ -12,14 +12,14 @@ function ticker() {
 
 var timer = setInterval(ticker, 3000);
 
-jQuery(document).ready(function ($) {
+jQuery(document).ready(function($) {
     "use strict";
 
-    jQuery('.menu-bars').on('click', function (e) {
+    jQuery('.menu-bars').on('click', function(e) {
         jQuery('.navbar-mobile').toggleClass('navbar-mobile-hidden');
     });
 
-    jQuery('.close-button').on('click', function (e) {
+    jQuery('.close-button').on('click', function(e) {
         jQuery('.navbar-mobile').toggleClass('navbar-mobile-hidden');
     });
 
@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
         jQuery('.main-featured-center img').height('auto');
     }
 
-    jQuery(window).resize(function () {
+    jQuery(window).resize(function() {
         var heightImg = jQuery('.main-featured-left').height();
         if (heightImg != 0) {
             jQuery('.main-featured-center img').height(heightImg);
@@ -52,23 +52,65 @@ jQuery(document).ready(function ($) {
         items: 4,
         margin: 20,
         nav: false,
-        dots: false
+        dots: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            767: {
+                items: 2
+            },
+            991: {
+                items: 3
+            },
+            1170: {
+                items: 3
+            },
+            1171: {
+                items: 4
+            }
+        }
     });
 
+    jQuery('.main-shows-slider-carousel').owlCarousel({
+        items: 5,
+        margin: 15,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            767: {
+                items: 2
+            },
+            991: {
+                items: 3
+            },
+            1170: {
+                items: 3
+            },
+            1171: {
+                items: 5
+            }
+        }
+    });
+
+
     jQuery('#ticker').on({
-        mouseenter: function () {
+        mouseenter: function() {
             clearInterval(timer);
         },
-        mouseleave: function () {
+        mouseleave: function() {
             timer = setInterval(ticker, 3000);
         }
     });
 
     jQuery('#ticker2').on({
-        mouseenter: function(){
+        mouseenter: function() {
             clearInterval(timer);
         },
-        mouseleave: function(){
+        mouseleave: function() {
             timer = setInterval(ticker, 3000);
         }
     });
