@@ -48,12 +48,21 @@
                         </div>
                     </div>
                     <div class="sidebar-container col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
-                        <?php $chat_code = get_post_meta(get_the_ID(), 'ops_chat_code', true); ?>
-                        <?php if ($chat_code != '') { ?>
-                            <?php echo $chat_code; ?>
+                        <?php if (is_user_logged_in()) { ?>
+                            <?php $chat_code = get_post_meta(get_the_ID(), 'ops_chat_code', true); ?>
+                            <?php if ($chat_code != '') { ?>
+                                <?php echo $chat_code; ?>
+                            <?php } else { ?>
+                                <div data-room-id="0" data-height="300px" data-width="100%" class="iflychat-embed"></div>
+                            <?php } ?>
                         <?php } else { ?>
-                            <div data-room-id="0" data-height="300px" data-width="100%" class="iflychat-embed"></div>
+                            <div class="opslens-login-box">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Opslens" class="img-fluid" />
+                                <h3><?php _e('To particitpate into public chatroom, you will need to log in', 'opslens'); ?></h3>
+                                <a href="<?php echo home_url('/login'); ?>" class="btn btn-sm btn-danger"><?php _e('Log In', 'opslens'); ?></a>
+                            </div>
                         <?php } ?>
+
                         <div id="rectangle_1"></div>
                     </div>
                 </div>
