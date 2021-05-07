@@ -75,7 +75,8 @@ jQuery(document).ready(function($) {
     jQuery('.main-shows-slider-carousel').owlCarousel({
         items: 5,
         margin: 15,
-        nav: false,
+        loop: true,
+        nav: true,
         dots: false,
         autoplay: true,
         responsive: {

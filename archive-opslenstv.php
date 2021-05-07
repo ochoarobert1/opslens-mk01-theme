@@ -58,6 +58,7 @@
                             <div class="title-container">
                                 <h3><?php _e('Latest News', 'opslens'); ?></h3>
                             </div>
+                            <?php if (!isset($array_posted)) { $array_posted = array(); } ?>
                             <?php $args = array('post_type' => 'post', 'posts_per_page' => 2, 'post__not_in' => $array_posted, 'order' => 'DESC', 'orderby' => 'date'); ?>
                             <?php $array_posts = new WP_Query($args); ?>
                             <?php if ($array_posts->have_posts()) : ?>
@@ -94,7 +95,7 @@
                         <?php } else { ?>
                             <div class="opslens-login-box">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Opslens" class="img-fluid" />
-                                <h3><?php _e('To particitpate into public chatroom, you will need to log in', 'opslens'); ?></h3>
+                                <h3><?php _e('To participate in the public chatroom, you will need to log in', 'opslens'); ?></h3>
                                 <a href="<?php echo home_url('/login'); ?>" class="btn btn-sm btn-danger"><?php _e('Log In', 'opslens'); ?></a>
                             </div>
                         <?php } ?>

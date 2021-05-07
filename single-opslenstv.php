@@ -8,6 +8,7 @@
                     <div class="main-show-slider-title col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
                         <h2>Featured <br />Live Shows</h2>
                     </div>
+                    <?php if (!isset($array_posted)) { $array_posted = array(); } ?>
                     <div class="main-show-slider-content  col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
                         <div class="main-shows-slider-carousel owl-carousel owl-theme">
                             <?php $args = array('post_type' => 'opslenstv', 'posts_per_page' => -1); ?>
@@ -58,7 +59,7 @@
                         <?php } else { ?>
                             <div class="opslens-login-box">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Opslens" class="img-fluid" />
-                                <h3><?php _e('To particitpate into public chatroom, you will need to log in', 'opslens'); ?></h3>
+                                <h3><?php _e('To participate in the public chatroom, you will need to log in', 'opslens'); ?></h3>
                                 <a href="<?php echo home_url('/login'); ?>" class="btn btn-sm btn-danger"><?php _e('Log In', 'opslens'); ?></a>
                             </div>
                         <?php } ?>
