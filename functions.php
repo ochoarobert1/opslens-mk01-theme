@@ -10,7 +10,9 @@ require_once('includes/wp_enqueue_styles.php');
     ENQUEUE AND REGISTER JS
 -------------------------------------------------------------- */
 
-if (!is_admin()) add_action('wp_enqueue_scripts', 'opslens_jquery_enqueue');
+if (!is_admin()) {
+    add_action('wp_enqueue_scripts', 'opslens_jquery_enqueue');
+}
 function opslens_jquery_enqueue()
 {
     wp_deregister_script('jquery');
@@ -19,7 +21,7 @@ function opslens_jquery_enqueue()
         /*- JQUERY ON LOCAL  -*/
         wp_register_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', false, '3.4.1', false);
         /*- JQUERY MIGRATE ON LOCAL  -*/
-        wp_register_script('jquery-migrate', get_template_directory_uri() . '/js/jquery-migrate.min.js',  array('jquery'), '3.0.1', false);
+        wp_register_script('jquery-migrate', get_template_directory_uri() . '/js/jquery-migrate.min.js', array('jquery'), '3.0.1', false);
     } else {
         /*- JQUERY ON WEB  -*/
         wp_register_script('jquery', 'https://code.jquery.com/jquery-3.4.1.min.js', false, '3.4.1', false);
@@ -148,7 +150,7 @@ function opslens_widgets_init()
 
 function opslens_custom_admin_styles()
 {
-    $version_remove = NULL;
+    $version_remove = null;
     wp_register_style('wp-admin-style', get_template_directory_uri() . '/css/custom-wordpress-admin-style.css', false, $version_remove, 'all');
     wp_enqueue_style('wp-admin-style');
 }
@@ -211,9 +213,9 @@ if (function_exists('add_image_size')) {
 
 function conditional_custom_category_limit($query)
 {
-
-    if (is_admin() || !$query->is_main_query())
+    if (is_admin() || !$query->is_main_query()) {
         return;
+    }
 
     if ((is_category('video')) || (is_category('military-videos'))) {
         $query->set('post_type', 'video');
@@ -286,7 +288,7 @@ function opslenstv_shortcode_callback()
     $arr_programs = new WP_Query(array('post_type' => 'opslenstv', 'posts_per_page' => -1, 'order' => 'DESC', 'orderby' => 'date'));
     if ($arr_programs->have_posts()) :
         while ($arr_programs->have_posts()) : $arr_programs->the_post();
-?>
+            ?>
             <div class="vertical-video-item" style="">
                 <div class="vertical-video-item-wrapper">
                     <div class="vertical-video-item-image">
@@ -304,3 +306,24 @@ function opslenstv_shortcode_callback()
     return $content;
 }
 add_shortcode('opslenstv_shortcode', 'opslenstv_shortcode_callback');
+
+add_action('wp_footer', 'opslens_floating_bar', 99);
+
+function opslens_floating_bar()
+{
+    ?>
+    <div class="floating-bar-container">
+    <?php
+        if (is_user_logged_in()) {
+            ?>
+    <a href="<?php echo home_url('/worldview-news/'); ?>" title="Enter to OpsLens WorldView News">Enter to WorldView News</a>
+<?php
+        } else {
+            ?>
+    <a href="<?php echo home_url('/my-account/'); ?>" title="Enter to My Account">Enter to My Account</a>
+<?php
+        }
+    ?>
+    </div>
+    <?php
+}

@@ -90,7 +90,7 @@
                             <?php endif; ?>
                             <?php wp_reset_query(); ?>
                         </div>
-                        <?php if (is_user_logged_in()) { ?>
+                        <?php /* if (is_user_logged_in()) { ?>
                             <div data-room-id="0" data-height="300px" data-width="100%" class="iflychat-embed"></div>
                         <?php } else { ?>
                             <div class="opslens-login-box">
@@ -98,7 +98,7 @@
                                 <h3><?php _e('To participate in the public chatroom, you will need to log in', 'opslens'); ?></h3>
                                 <a href="<?php echo home_url('/login'); ?>" class="btn btn-sm btn-danger"><?php _e('Log In', 'opslens'); ?></a>
                             </div>
-                        <?php } ?>
+                        <?php } */?>
                         <div id="rectangle_1"></div>
                     </div>
                 </div>

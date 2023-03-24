@@ -110,7 +110,7 @@
             </div>
             <div class="the-header col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="container">
-                    <div class="row align-items-center">
+                    <div class="row align-items-center justify-content-between">
                         <div class="header-center col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="header-left">
                                 <div class="menu-bars d-xl-none d-lg-none d-md-inline-block d-sm-inline-block d-inline-block">
@@ -120,29 +120,41 @@
                                 </div>
                             </div>
 
-                            <a class="custom-navbar-brand" href="<?php echo home_url('/'); ?>" title="<?php echo get_bloginfo('name'); ?>">
+                            <a class="custom-navbar-brand d-xl-none d-lg-none d-md-none d-sm-block d-block" href="<?php echo home_url('/'); ?>" title="<?php echo get_bloginfo('name'); ?>">
                                 <?php ?> <?php $custom_logo_id = get_theme_mod('custom_logo'); ?>
                                 <?php $image = wp_get_attachment_image_src($custom_logo_id, array('250', '250')); ?>
                                 <?php if (!empty($image)) { ?>
                                 <img src="<?php echo $image[0]; ?>" alt="<?php echo get_bloginfo('name'); ?>" class="img-fluid img-logo" />
                                 <?php } ?>
                             </a>
-                            <div class="header-right-container d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/header-banner.png" alt="Download" class="img-fluid img-sprite d-xl-block d-lg-block d-md-none d-sm-none d-none">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-tb.png" alt="Download" class="img-fluid img-sprite img-tblogo d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                            <div class="header-right-container col-xl-12 col-md-12 col-sm-12 col-12xl-block d-lg-block d-md-block d-sm-none d-none">
+                                <a class="custom-navbar-brand" href="<?php echo home_url('/'); ?>" title="<?php echo get_bloginfo('name'); ?>">
+                                    <?php ?> <?php $custom_logo_id = get_theme_mod('custom_logo'); ?>
+                                    <?php $image = wp_get_attachment_image_src($custom_logo_id, array('250', '250')); ?>
+                                    <?php if (!empty($image)) { ?>
+                                    <img src="<?php echo $image[0]; ?>" alt="<?php echo get_bloginfo('name'); ?>" class="img-fluid img-logo" />
+                                    <?php } ?>
+                                </a>
                                 <div class="header-buttons-text">
-                                    <p>Feel Free to express yourself without censorship</p>
+                                    <!-- <p>JOIN THE <strong>TRUTH</strong> BRIGADE COMMUNITY</p> -->
                                     <div class="header-right-buttons-container">
                                         <a href="https://apps.apple.com/us/app/opslens-network/id1498033459" title="Download from Appstore" target="_blank">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/images/appstore.png" alt="Download from Appstore" class="img-fluid" />
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/appstore-logo_result.webp" alt="Download from Appstore" class="img-fluid" />
                                         </a>
                                         <a href="https://play.google.com/store/apps/details?id=com.streann.opslens" title="Download from Google Play" target="_blank">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/images/googleplay.png" alt="Download from Google Play" class="img-fluid" />
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/googleplay-logo_result.webp" alt="Download from Google Play" class="img-fluid" />
+                                        </a>
+                                        <a href="https://play.google.com/store/apps/details?id=com.streann.opslens" title="Download from Google Play" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/roku-logo_result.webp" alt="Download from Google Play" class="img-fluid" />
+                                        </a>
+                                        <a href="https://play.google.com/store/apps/details?id=com.streann.opslens" title="Download from Google Play" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/apple-tv_result.webp" alt="Download from Google Play" class="img-fluid" />
+                                        </a>
+                                        <a href="https://play.google.com/store/apps/details?id=com.streann.opslens" title="Download from Google Play" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/fire-tv-logo_result.webp" alt="Download from Google Play" class="img-fluid" />
                                         </a>
                                     </div>
-                                    <div class="roku-apple-header">
-                                        Available on <a href="https://channelstore.roku.com/details/58c071e18e357fb45d40698129de0947/opslens" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/roku.png" alt="" class="img-fluid"></a> <a href="https://apps.apple.com/us/app/opslens-network/id1498033459#?platform=appleTV" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/appletv.png" alt="" class="img-fluid"></a>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

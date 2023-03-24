@@ -139,7 +139,7 @@ a:hover {
   margin-right: 0;
 }
 .the-header {
-  background: url(../images/banner_header.jpg);
+  background: url(../images/header-opslens_result.webp);
   background-size: cover;
 }
 .the-header .header-center {
@@ -476,6 +476,7 @@ a:hover {
   letter-spacing: 0.5px;
 }
 .main-featured-container {
+  margin-top: 2rem;
   background: #F5F5F5;
 }
 .main-featured-container .main-featured-left {
@@ -487,7 +488,7 @@ a:hover {
   overflow: hidden;
 }
 .main-featured-container .vertical-media-slider-container {
-  background: #3C3A3B;
+  background: #000000;
   color: #ffffff;
 }
 .main-featured-container .vertical-media-slider-container .vertical-media-item .vertical-media-item-wrapper {
@@ -744,7 +745,6 @@ a:hover {
 }
 .block1-container .block1-latest-news-wrapper {
   border-left: 1px solid #F71A13;
-  max-height: 890px;
   overflow: hidden;
 }
 .block1-container .block1-latest-news-wrapper .latest-news-media-item {
@@ -1176,18 +1176,21 @@ a:hover {
 }
 .header-right-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 4rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+.header-right-container .img-logo {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 3rem 0 1rem 0 !important;
 }
 .header-right-container .header-buttons-text {
   color: white;
   line-height: 1.5rem;
   font-size: 1rem;
   text-align: left;
-  max-width: 350px;
-  padding: 2rem 0;
-  padding-left: 2rem;
+  padding: 1rem 0 1.5rem 0;
 }
 .header-right-container .header-buttons-text p {
   margin-bottom: 5px;
@@ -1203,11 +1206,10 @@ a:hover {
   text-transform: uppercase;
 }
 .header-right-container .header-right-buttons-container img {
-  max-width: 120px;
+  max-width: 180px;
+  max-height: 40px;
   margin: 0.5rem 0;
-  border: 2px solid white;
-  border-radius: 5px;
-  margin-right: 10px;
+  margin-right: 30px;
 }
 .header-right-container .roku-apple-header {
   display: flex;
@@ -1329,4 +1331,70 @@ a:hover {
   .um-ajax-items .um-item {
     flex: 0 0 100%;
   }
+}
+.banner-footer {
+  align-items: center;
+  justify-content: center;
+}
+.main-video-worldview-content {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  padding: 0 !important;
+}
+.main-video-worldview-content:before {
+  position: absolute;
+  z-index: 8;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.219);
+}
+.main-video-worldview-content .wrapper-content {
+  position: absolute;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.main-video-worldview-content iframe {
+  z-index: -1;
+  position: absolute;
+  top: -20vh;
+}
+@media (max-width: 991px) {
+  .wrapper-content {
+    padding: 0 1rem;
+  }
+  .wrapper-content h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper-content {
+    padding: 0 2rem;
+  }
+  .wrapper-content h3 {
+    font-size: 1.15rem;
+  }
+}
+.floating-bar-container {
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  z-index: 9;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+.floating-bar-container a {
+  background: red;
+  padding: 10px 2rem;
+  color: #FFF;
 }

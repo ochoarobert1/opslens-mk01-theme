@@ -4,6 +4,7 @@
 
 <main class="container-fluid p-0" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
     <div class="row no-gutters">
+        <?php /*
         <section class="main-bar-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="container">
                 <div class="row">
@@ -46,6 +47,7 @@
             </div>
         </section>
 
+
         <section class="banner-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="container">
                 <div class="row">
@@ -57,20 +59,28 @@
                 </div>
             </div>
         </section>
-
-        <?php /*
-        <section class="main-video-trailer-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="container">
-                <div class="row">
-                    <div class="main-video-trailer-content col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div style='position: relative;padding-bottom: 56%;padding-top: 20px;height: 0'>
-                            <iframe style='position: absolute;top: 0;left: 0;width: 100%;height: 100%' frameborder='0' scrolling='no' allowFullScreen src='https://ott.streann.com/streaming/player.html?U2FsdGVkX1+ugMQ+0UoWgGacdEw/SiYRlDxgbREOYaxfjVo2p/jPvEcg1byUJqTdQJ6B72USUE3501tHtOuPTFQcjlBKR9sqOQAbTIBn5nNtRLkLaXBzo3HWy+sR0GxDUtiseqOeHLoxPfev00yj3oLdwHNxCSlecbbiXdypNKP2mlxDKYcj/iBuJpw/6UeISFREZWNdzsi8LEpn5vW+VUBXGYFC3I91SPxesyZtDhjBRTtIoXjD1NBGbqQVwz/8HnhIIimeZIqpZkNOYea/0aj/WMISmfytvBnVoGyXsJldkX7iEanykJI+a5IToN6q2R7UDNLJ5UpAudC2E6TxurmHiac8yoyrZesfc5daBLg='></iframe>
-                        </div>
+*/ ?>
+        <section class="main-video-worldview-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="main-video-worldview-content col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <iframe class="inner" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="global network background animation" width="100%" height="100%" src="https://www.youtube.com/embed/itQQCkA87Hs?playlist=itQQCkA87Hs&amp;iv_load_policy=3&amp;enablejsapi=1&amp;disablekb=1&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;loop=1&amp;mute=1&amp;wmode=transparent&amp;origin=https%3A%2F%2Fopslens.com&amp;widgetid=1" id="widget2" style="max-width: 1000%; margin-left: 0px; margin-top: -263px; width: 1903px; height: 1070.44px;"></iframe>
+                <div class="wrapper-content text-center">
+                    <div class="image-banner-content">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo-wv.png" alt="Worldview" class="img-fluid" />
+                    </div>
+                    <div class="text-banner-content text-center" style="color: #fff; text-shadow: 0 0 6px black;">
+                        <h2>OpsLens World View</h2>
+                        <h3 style="color: #fff; text-shadow: 0 0 6px black;">The new way to VIEW the world<br/>
+                            Find all types of articles and obtain a clear vision of the entire world<br/>
+                            Searching any kind of information and finding the truth behind the headlines</h3>
+                        <a href="https://opslens.com/opslens-worldview/" class="btn btn-md btn-danger btn-worldview mt-3">Learn More</a>
+                    </div>
+                    <div class="image-banner-content">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo-wv.png" alt="Worldview" class="img-fluid" />
                     </div>
                 </div>
             </div>
         </section>
-        */ ?>
+        
 
         <section class="main-featured-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="container">
@@ -268,6 +278,9 @@
         <!-- Opslens - Home Main Banner -->
         <div class="container">
             <div class="row">
+			<aside class="ads-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <a href="https://athleticjunction.com/opslens/" title="Visit our Store"><img src="https://opslens.com/files/2022/12/OL-Store_1300x250.png" class="img-fluid" /></a>
+                </aside>
                 <aside class="ads-container col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div id="leaderboard_1"></div>
                 </aside>
@@ -435,7 +448,7 @@
                                     <div class="title-container">
                                         <h3><?php _e('Latest News', 'opslens'); ?></h3>
                                     </div>
-                                    <?php $args = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $array_posted, 'order' => 'DESC', 'orderby' => 'date'); ?>
+                                    <?php $args = array('post_type' => 'post', 'posts_per_page' => 5, 'post__not_in' => $array_posted, 'order' => 'DESC', 'orderby' => 'date'); ?>
                                     <?php $array_posts = new WP_Query($args); ?>
                                     <?php if ($array_posts->have_posts()) : ?>
                                         <?php while ($array_posts->have_posts()) : $array_posts->the_post(); ?>
@@ -686,9 +699,8 @@
     */ ?>
 
         <section class="footer-banner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="header-right-container d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
+            <div class="header-right-container banner-footer d-xl-flex d-lg-flex d-md-flex d-sm-none d-none">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/header-banner.png" alt="Download" class="img-fluid img-sprite d-xl-block d-lg-block d-md-none d-sm-none d-none">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/logo-tb.png" alt="Download" class="img-fluid img-sprite img-tb-logo-footer d-xl-block d-lg-block d-md-none d-sm-none d-none">
                 <div class="header-buttons-text black-text">
                     <p>Feel Free to express yourself without censorship</p>
                     <div class="header-right-buttons-container">
